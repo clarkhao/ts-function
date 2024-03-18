@@ -1,0 +1,41 @@
+{
+  "name": "@clarkhao/utils",
+  "version": "0.0.3-beta",
+  "description": "",
+  "main": "lib/cjs/index.js",
+  "module": "lib/mjs/index.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "clear": "shx rm -r ./lib",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|css)\"",
+    "lint": "eslint --fix --ext .ts .",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && .\\build\\build.exe",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "ClarkHao",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.1.1",
+    "shx": "^0.3.4",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
